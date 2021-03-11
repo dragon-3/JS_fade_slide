@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <title>Document</title>
+
+  <style>
+
+    .slide {
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    .slide img {
+      
+      width: 800px;
+      display: block;
+      margin: auto;
+    }
+
+
+    .slide p {
+      font-family: 'Pacifico', cursive;
+      font-size: 38px;
+    }
+
+    .w3-animate-fading {
+      animation: fading 10s infinite;
+    }
+
+    @keyframes fading {
+      0% {
+        opacity: 0;
+      }
+
+      50% {
+        opacity: 1;
+      }  
+
+      100% {
+        opacity: 0;
+      }    
+    }
+  </style>
+
+</head>
+<body>
+    
+
+  <div class="slide">
+    <p>Fade</p>
+    <img class="mySlides w3-animate-fading" src="https://cdn.pixabay.com/photo/2020/04/02/21/56/forest-4996811_1280.jpg" >
+    <img class="mySlides w3-animate-fading" src="https://cdn.pixabay.com/photo/2020/10/17/14/25/river-5662293_1280.jpg" >
+    <img class="mySlides w3-animate-fading" src="https://cdn.pixabay.com/photo/2020/10/11/10/00/waterfalls-5645361_1280.jpg"> 
+  </div>
+
+
+
+  <script>
+    var myIndex = 0;
+    carousel();
+        
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      myIndex++;
+      if (myIndex > x.length) {myIndex = 1}    
+      x[myIndex-1].style.display = "block";  
+      setTimeout(carousel, 9000);    
+    }
+  </script>
+
+</body>
+</html>

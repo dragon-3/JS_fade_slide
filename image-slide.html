@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <title>Document</title>
+
+  <style>
+
+
+    .slide {
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .slide img {
+        
+        width: 800px;
+        margin: auto;
+        display: block;
+    }
+
+
+    .slide p {
+        font-family: 'Pacifico', cursive;
+        font-size: 38px;
+    }
+
+    .w3-animate-top {
+      position: relative;
+      animation: animatetop 0.9s;
+      animation-duration: 0.9s;
+    }
+
+    .w3-animate-bottom {
+      position: relative;
+      animation: animatebottom 0.9s;
+      animation-duration: 0.9s;
+    }
+
+    @keyframes animatetop {
+      0% {
+        top: -300px;
+        opacity: 0;
+      }  
+
+      100% {
+        top: 0px;
+        opacity: 1;
+      }    
+    }
+
+    @keyframes animatebottom {
+      0% {
+        bottom: -300px;
+        opacity: 0;
+      }  
+
+      100% {
+        bottom: 0px;
+        opacity: 1;
+      }    
+    }
+  </style>
+
+</head>
+<body>
+
+
+    
+
+  <div class="slide" >
+        <p>Slide</p>
+        <img class="mySlides w3-animate-top" src="https://cdn.pixabay.com/photo/2020/04/02/21/56/forest-4996811_1280.jpg" >
+        <img class="mySlides w3-animate-bottom" src="https://cdn.pixabay.com/photo/2020/10/17/14/25/river-5662293_1280.jpg" >
+        <img class="mySlides w3-animate-top" src="https://cdn.pixabay.com/photo/2020/10/11/10/00/waterfalls-5645361_1280.jpg" >
+        
+    </div>
+
+
+
+  <script>
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+        }
+        myIndex++;
+        if (myIndex > x.length) {myIndex = 1}    
+        x[myIndex-1].style.display = "block";  
+        setTimeout(carousel, 2500);    
+    }
+  </script>
+
+</body>
+</html>
